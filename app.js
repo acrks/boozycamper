@@ -16,10 +16,10 @@ mongoose
 app.get("/", (req, res) => res.send("Hello World"));
 
 const users = require("./routes/api/users");
-const tweets = require("./routes/api/tweets");
+const products = require("./routes/api/products");
 
 app.use("/api/users", users);
-app.use("/api/tweets", tweets);
+app.use("/api/products", products);
 
 const port = process.env.PORT || 5000;
 
