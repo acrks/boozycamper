@@ -13,8 +13,6 @@ mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
 
-app.get("/", (req, res) => res.send("Hello World"));
-
 const users = require("./routes/api/users");
 const products = require("./routes/api/products");
 

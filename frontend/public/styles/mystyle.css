@@ -1,0 +1,22 @@
+/* @import url(./css_reset.css); */
+@font-face {
+  font-family: 'cintya_scriptregular';
+  src: url('cintya_script-webfont.woff2') format('woff2'),
+       url('cintya_script-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    text-align: center;
+    background-color: #fffaf1;
+}
+
+h1 {
+  font-family: 'MyWebFont', Arial, sans-serif;
+}
