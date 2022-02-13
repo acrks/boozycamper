@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-// import './navbar.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faTiktok} from '@fortawesome/free-brands-svg-icons';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class NavBar extends React.Component {
         return (
             <div className='tabs'>
                 <Link to={'/login'}>Login</Link>
-                <Link to={'/drinks'}>Drinks</Link>
+                <Link to={'/drinks'}>Drinks Menu</Link>
                 <Link to={'/vendors'}>Vendors</Link>
             </div>
         );
@@ -38,6 +39,8 @@ class NavBar extends React.Component {
   render() {
       return (
         <div>
+            <FontAwesomeIcon icon={faInstagram} className="fontAwesome" />
+            <FontAwesomeIcon icon={faTiktok} className="fontAwesome" />
             <h1 className='header'>The Boozy Camper</h1>
             <h2 className='subheader'>Let the good times roll to you!</h2>
             { this.getLinks() }

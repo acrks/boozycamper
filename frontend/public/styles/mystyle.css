@@ -20,3 +20,14 @@ h2 {
   font-family: 'Oooh Baby', cursive;
   font-family: 'Reenie Beanie', cursive;
 }
+
+form > input,
+form > textarea,
+form > select > option {
+  font-family: 'Crimson Pro', serif;
+  text-align: center;
+}
+
+form > textarea {
+  text-align: left;
+}
