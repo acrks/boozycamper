@@ -1,22 +1,42 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { BrowserRouter, Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faTiktok} from '@fortawesome/free-brands-svg-icons';
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    this.logoutUser = this.logoutUser.bind(this);
-    this.getLinks = this.getLinks.bind(this);
+    this.main = React.createRef();
   }
 
-  logoutUser(e) {
+  handleScroll = e => {
+    e.preventDefault();
+    const main = this.main.current;
+    window.scrollTo({
+      top: main.offsetTop,
+      left: 0,
+      behavior: "instant"
+    });
+  };
+
+  logoutUser = e => {
       e.preventDefault();
       this.props.logout();
   }
 
+  getSocialFA = () => {
+    return (
+      <div className = "fontAwesome">
+        <a href = 'https://www.instagram.com/theboozycamper/' target= "_blank">
+        <FontAwesomeIcon icon={faInstagram} className="fontAwesomeIcon"/>
+        </a>
+        <FontAwesomeIcon icon={faTiktok} className="fontAwesomeIcon" />
+      </div>
+    )
+  }
+
   // Selectively render links dependent on whether the user is logged in
-  getLinks() {
+  getLinks = () => {
       if (this.props.loggedIn) {
         return (
             <div>
@@ -27,11 +47,14 @@ class NavBar extends React.Component {
         );
       } else {
         return (
-            <div className='tabs'>
+              <div className='tabs'>
                 <Link to={'/login'}>Login</Link>
+                <Link to={'/'}>Home</Link>
                 <Link to={'/drinks'}>Drinks Menu</Link>
                 <Link to={'/vendors'}>Vendors</Link>
-            </div>
+                <Link to={'reserve'}>Reserve The Boozy Camper</Link>
+                <Link to={'aboutus'}>Our Story</Link>
+              </div>
         );
       }
   }
@@ -39,9 +62,8 @@ class NavBar extends React.Component {
   render() {
       return (
         <div>
-            <FontAwesomeIcon icon={faInstagram} className="fontAwesome" />
-            <FontAwesomeIcon icon={faTiktok} className="fontAwesome" />
-            <h1 className='header'>The Boozy Camper</h1>
+            { this.getSocialFA() }
+            <Link to = "/" className = "header"><h1>The Boozy Camper</h1></Link>
             <h2 className='subheader'>Let the good times roll to you!</h2>
             { this.getLinks() }
         </div>

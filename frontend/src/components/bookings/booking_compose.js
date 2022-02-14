@@ -49,7 +49,7 @@ class BookingCompose extends React.Component {
 
   render() {
     return (
-        <div>
+        <a id = "reserve">
           <h2>Make A Reservation</h2>
           <form className = "booking_form">
             <h4>Name</h4>
@@ -81,7 +81,7 @@ class BookingCompose extends React.Component {
             <br/>
             <button onClick = {this.handleSubmit} className = "buttonforsignupform">Submit your reservation!</button>
           </form>
-        </div>
+        </a>
     )
   }
 }

@@ -31,3 +31,8 @@ form > select > option {
 form > textarea {
   text-align: left;
 }
+
+.header {
+  text-decoration: none;
+  color: inherit;
+}
