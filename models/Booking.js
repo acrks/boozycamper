@@ -12,7 +12,7 @@ const BookingSchema = new Schema({
   },
   opened: {
     type: Boolean,
-    default: true,
+    default: false,
   },
   date: {
     type: Date,
@@ -43,6 +43,10 @@ const BookingSchema = new Schema({
       required: true
   },
   package: {
+      type: String,
+      required: true
+  },
+  comments: {
       type: String,
       required: true
   },

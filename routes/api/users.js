@@ -4,10 +4,8 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const User = require('../../models/User');
+const validateLoginInput = require('../../validation/login');
 
-router.get('/test', (req, res) => {
-  res.json({ msg: "God I hope I get it" });
-})
 
 router.post("/login", (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);

@@ -27,7 +27,7 @@ class Booking extends React.Component {
         <div>
           <h2>All Bookings</h2>
           {this.state.bookings.map(booking => (
-            <BookingBox key={booking._id} />
+            <BookingBox key={booking._id} booking= {booking} />
           ))}
         </div>
       );
