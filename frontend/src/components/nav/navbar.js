@@ -51,8 +51,8 @@ class NavBar extends React.Component {
                 <Link to={'/login'}>Login</Link>
                 <Link to={'/'}>Home</Link>
                 <Link to={'/drinks'}>Drinks Menu</Link>
-                <Link to={'/vendors'}>Vendors</Link>
                 <Link to={'reserve'}>Reserve The Boozy Camper</Link>
+                <Link to={'/vendors'}>Vendors</Link>
                 <Link to={'aboutus'}>Our Story</Link>
               </div>
         );

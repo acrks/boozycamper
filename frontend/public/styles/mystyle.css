@@ -36,3 +36,11 @@ form > textarea {
   text-decoration: none;
   color: inherit;
 }
+
+.tabs {
+  width: 100%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
