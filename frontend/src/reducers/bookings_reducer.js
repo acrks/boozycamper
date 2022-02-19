@@ -8,7 +8,7 @@ import { RECEIVE_BOOKINGS, RECEIVE_NEW_BOOKING } from '../actions/booking_action
         newState.all = action.bookings.data;
         return newState;
       case RECEIVE_NEW_BOOKING:
-        newState.new = action.booking.data
+        newState.new = action.booking.data;
         return newState;
       default:
         return state;

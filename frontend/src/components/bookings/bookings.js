@@ -16,7 +16,7 @@ class Booking extends React.Component {
   }
 
   componentWillReceiveProps(newState) {
-    this.setState({ bookings: newState.tweets });
+    this.setState({ bookings: newState.bookings });
   }
 
   render() {

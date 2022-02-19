@@ -1,11 +1,11 @@
 import { getBookings, writeBooking } from '../util/booking_api_util';
 
-export const RECEIVE_BOOKINGS = "RECEIVE_TWEETS";
-export const RECEIVE_NEW_BOOKING = "RECEIVE_NEW_TWEET";
+export const RECEIVE_BOOKINGS = "RECEIVE_BOOKINGS";
+export const RECEIVE_NEW_BOOKING = "RECEIVE_NEW_BOOKING";
 
-export const receiveBookings = tweets => ({
+export const receiveBookings = bookings => ({
   type: RECEIVE_BOOKINGS,
-  tweets
+  bookings
 });
 
 export const receiveNewBooking = booking => ({

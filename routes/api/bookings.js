@@ -1,10 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
 const passport = require('passport');
-
 const Booking = require('../../models/Booking');
-// const validateTweetInput = require('../../validation/tweets');
+const validateBookingInput = require('../../validation/bookings');
 
 router.get('/', (req, res) => {
     Booking.find()
@@ -14,7 +12,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/bookings/:email', (req, res) => {
-    Tweet.find({user: req.params.email})
+    Booking.find({user: req.params.email})
         .then(bookings => res.json(bookings))
         .catch(err =>
             res.status(404).json({ nobookingsfound: 'No bookings found from that user' }
@@ -30,10 +28,8 @@ router.get('/:id', (req, res) => {
         );
 });
 
-router.post('/',
-    passport.authenticate('jwt', { session: false }),
-    (req, res) => {
-      const { errors, isValid } = validateTweetInput(req.body);
+router.post('/', (req, res) => {
+      const { errors, isValid } = validateBookingInput(req.body);
   
       if (!isValid) {
         return res.status(400).json(errors);
@@ -42,10 +38,16 @@ router.post('/',
       const newBooking = new Booking({
         client_name: req.body.client_name,
         client_email: req.body.client_email,
-        opened: req.body.opened
+        date: req.body.date,
+        booking_duration: req.body.booking_duration,
+        occasion: req.body.occasion,
+        number_of_guests: req.body.guests,
+        venue_city: req.body.venue_city,
+        venue_name: req.body.venue_name,
+        package: req.body.package,
       });
   
-      newBooking.save().then(tweet => res.json(tweet));
+      newBooking.save().then(booking => res.json(booking));
     }
   );
 

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const getBookings = () => {
-  return axios.get('/api/bookings')
+  return axios.get('/api/bookings/')
 };
 
 export const writeBooking = data => {
