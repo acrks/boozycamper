@@ -8,10 +8,18 @@ class BookingCompose extends React.Component {
       super(props);
 
       this.state = {
-        name: '',
-        email: '',
-        venue: '',
+        client_name: '',
+        client_email: '',
+        date: '',
+        booking_duration: '',
+        event_type: '',
+        num_guests: '',
+        venue_city: '',
+        venue_name: '',
+        bar_budget: '',
+        referral_source: '',
         package: '',
+        comments: '',
       }
 
       this.handleChange = this.handleChange.bind(this);
@@ -25,10 +33,18 @@ class BookingCompose extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let booking = {
-      name: this.state.name,
-      email: this.state.email,
-      venue: this.state.venue,
+      client_name: this.state.client_name,
+      client_email: this.state.client_email,
+      date: this.state.date,
+      booking_duration: this.state.booking_duration,
+      event_type: this.state.event_type,
+      num_guests: this.state.num_guests,
+      venue_city: this.state.venue_city,
+      venue_name: this.state.venue_name,
+      bar_budget: this.state.bar_budget,
+      referral_source: this.state.referral_source,
       package: this.state.package,
+      comments: this.state.comments,
     };
 
     this.props.composebooking(booking); 
@@ -40,10 +56,18 @@ class BookingCompose extends React.Component {
       console.log('Your message was successfully sent!');
   });
     this.setState({
-      name: '',
-      email: '',
-      venue: '',
+      client_name: '',
+      client_email: '',
+      date: '',
+      booking_duration: '',
+      event_type: '',
+      num_guests: '',
+      venue_city: '',
+      venue_name: '',
+      bar_budget: '',
+      referral_source: '',
       package: '',
+      comments: '',
     })
   }
 
@@ -70,11 +94,13 @@ class BookingCompose extends React.Component {
             <h4>Number of Guests</h4>
             <input type = "text" placeholder='50' onChange={this.handleChange('num_guests')}></input>
             <h4>Venue Location</h4>
-            <input type = "text" placeholder='Burbank' onChange={this.handleChange('venue')}></input>
+            <input type = "text" placeholder='Burbank' onChange={this.handleChange('venue_city')}></input>
+            <h4>Venue Name</h4>
+            <input type = "text" placeholder='BC Country Club' onChange={this.handleChange('venue_name')}></input>
             <h4>How did you hear about us?</h4>
             <input type = "text" placeholder='Instagram' onChange={this.handleChange('referral_source')}></input>
             <h4>Bar Budget</h4>
-            <input type = "text" placeholder='$1000' onChange={this.handleChange('budget')}></input>
+            <input type = "text" placeholder='$1000' onChange={this.handleChange('bar_budget')}></input>
             <h4>Any questions/comments?</h4>
             <textarea placeholder='Let us know here!' rows = '10' cols = '30' onChange={this.handleChange('comments')}></textarea>
             <br/>

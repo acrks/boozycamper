@@ -10,12 +10,15 @@ const BookingBox = props => {
             <p>Date of Event: {booking.date}</p>
             <p>Date Created: {booking.date_created}</p>
             <p>Booking Duration: {booking.duration}</p>
-            <p>Occasion: {booking.occasion}</p>
-            <p>Number of Guests: {booking.number_of_guests}</p>
+            <p>Occasion: {booking.event_type}</p>
+            <p>Number of Guests: {booking.num_guests}</p>
             <p>City: {booking.venue_city}</p>
             <p>Name of Venue: {booking.venue_name}</p>
             <p>Package: {booking.package}</p>
+            <p>Referred From: {booking.referral_source}</p>
+            <p>Bar Budget: {booking.bar_budget}</p>
             <p>Comments/Questions: {booking.comments}</p>
+            <p>Booked: {booking.booked ? `Yes` : `No`}</p>
         </div>
     );
 }

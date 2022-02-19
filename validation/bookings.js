@@ -22,11 +22,11 @@ module.exports = function validateBookingInput(data) {
     errors.text = 'Booking duration is required';
   }
 
-  if (Validator.isEmpty(data.occasion)) {
+  if (Validator.isEmpty(data.event_type)) {
     errors.text = 'Occasion is required';
   }
 
-  if (Validator.isEmpty(data.number_of_guests)) {
+  if (Validator.isEmpty(data.num_guests)) {
     errors.text = 'Number of guests is required';
   }
 
@@ -38,9 +38,13 @@ module.exports = function validateBookingInput(data) {
     errors.text = 'Venue name is required';
   }
 
+  if (Validator.isEmpty(data.bar_budget)) {
+    errors.text = 'Bar Budget field is required';
+  }
   if (Validator.isEmpty(data.package)) {
     errors.text = 'Package field is required';
   }
+
 
   return {
     errors,
