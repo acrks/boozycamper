@@ -30,7 +30,9 @@ class NavBar extends React.Component {
         <a href = 'https://www.instagram.com/theboozycamper/' target= "_blank">
         <FontAwesomeIcon icon={faInstagram} className="fontAwesomeIcon"/>
         </a>
+        <a href = 'https://www.tiktok.com/theboozycamper/' target= "_blank">
         <FontAwesomeIcon icon={faTiktok} className="fontAwesomeIcon" />
+        </a>
       </div>
     )
   }

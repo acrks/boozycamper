@@ -5,7 +5,7 @@ class Hero extends React.Component
  render() {
      return(
         <div className = "hero">
-            <h2>Photos will go here</h2>
+            <h2>Memories Await...</h2>
         </div>
      )
  }

@@ -33,7 +33,7 @@ form > textarea {
 }
 
 .header {
-  text-decoration: none;
+  text-decoration: none; 
   color: inherit;
 }
 
@@ -43,4 +43,29 @@ form > textarea {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.fontAwesome {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.hero {
+  width: 100%;
+  border: 1px solid black;
+  background-image: url("../273904981_255887250049479_555529388082633653_n.jpeg");
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  opacity: 90%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  text-shadow: none;
 }
