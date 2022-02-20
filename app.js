@@ -16,10 +16,12 @@ mongoose
 const users = require("./routes/api/users");
 const products = require("./routes/api/products");
 const bookings = require("./routes/api/bookings");
+const faqs = require("./routes/api/faqs");
 
 app.use("/api/users", users);
 app.use("/api/products", products);
 app.use("/api/bookings", bookings);
+app.use("/api/faqs", faqs);
 
 const port = process.env.PORT || 5000;
 

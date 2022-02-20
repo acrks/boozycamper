@@ -52,22 +52,22 @@ class BookingCompose extends React.Component {
       this.state.email,
       `New booking request on ${this.state.date} at ${this.state.venue} from ${this.state.name}`,
       `Test body`
-  ).then(() => {
-      console.log('Your message was successfully sent!');
-  });
-    this.setState({
-      client_name: '',
-      client_email: '',
-      date: '',
-      booking_duration: '',
-      event_type: '',
-      num_guests: '',
-      venue_city: '',
-      venue_name: '',
-      bar_budget: '',
-      referral_source: '',
-      package: '',
-      comments: '',
+    ).then(() => {
+        console.log('Your message was successfully sent!');
+    });
+      this.setState({
+        client_name: '',
+        client_email: '',
+        date: '',
+        booking_duration: '',
+        event_type: '',
+        num_guests: '',
+        venue_city: '',
+        venue_name: '',
+        bar_budget: '',
+        referral_source: '',
+        package: '',
+        comments: '',
     })
   }
 
@@ -77,13 +77,13 @@ class BookingCompose extends React.Component {
           <h2>Make A Reservation</h2>
           <form className = "booking_form">
             <h4>Name</h4>
-            <input type = "text" placeholder='Your name' onChange={this.handleChange('client_name')}></input>
+              <input type = "text" placeholder='Your name' onChange={this.handleChange('client_name')}></input>
             <h4>Email</h4>
-            <input type = "text" placeholder='Best contact email' onChange={this.handleChange('client_email')}></input>
+              <input type = "text" placeholder='Best contact email' onChange={this.handleChange('client_email')}></input>
             <h4>Date</h4>
-            <input type = "date" onChange={this.handleChange('date')}></input>
+              <input type = "date" onChange={this.handleChange('date')}></input>
             <h4>Occasion</h4>
-            <input type = "text" placeholder='Wedding' onChange={this.handleChange('event_type')}></input>
+              <input type = "text" placeholder='Wedding' onChange={this.handleChange('event_type')}></input>
             <h4>Package</h4>
             <select value = {this.state.package} text-align-last = "center" onChange = {this.handleChange('package')}>
               <option value="" disabled defaultValue className = "appoinment-style-option">Select the package you'd like</option>
@@ -92,17 +92,17 @@ class BookingCompose extends React.Component {
               <option value="The Boozy Bundle" className = "appoinment-style-option">The Boozy Bundle</option>
             </select>
             <h4>Number of Guests</h4>
-            <input type = "text" placeholder='50' onChange={this.handleChange('num_guests')}></input>
+              <input type = "text" placeholder='50' onChange={this.handleChange('num_guests')}></input>
             <h4>Venue Location</h4>
-            <input type = "text" placeholder='Burbank' onChange={this.handleChange('venue_city')}></input>
+              <input type = "text" placeholder='Burbank' onChange={this.handleChange('venue_city')}></input>
             <h4>Venue Name</h4>
-            <input type = "text" placeholder='BC Country Club' onChange={this.handleChange('venue_name')}></input>
+              <input type = "text" placeholder='BC Country Club' onChange={this.handleChange('venue_name')}></input>
             <h4>How did you hear about us?</h4>
-            <input type = "text" placeholder='Instagram' onChange={this.handleChange('referral_source')}></input>
+              <input type = "text" placeholder='Instagram' onChange={this.handleChange('referral_source')}></input>
             <h4>Bar Budget</h4>
-            <input type = "text" placeholder='$1000' onChange={this.handleChange('bar_budget')}></input>
+              <input type = "text" placeholder='$1000' onChange={this.handleChange('bar_budget')}></input>
             <h4>Any questions/comments?</h4>
-            <textarea placeholder='Let us know here!' rows = '10' cols = '30' onChange={this.handleChange('comments')}></textarea>
+              <textarea placeholder='Let us know here!' rows = '10' cols = '30' onChange={this.handleChange('comments')}></textarea>
             <br/>
             <br/>
             <button onClick = {this.handleSubmit} className = "buttonforsignupform">Submit your reservation!</button>
