@@ -1,11 +1,22 @@
 const express = require("express");
 const router = express.Router();
+const passport = require('passport');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const User = require('../../models/User');
 const validateLoginInput = require('../../validation/login');
 
+// router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
+//   res.json({
+//     id: req.user.id,
+//     email: req.user.email
+//   });
+// })
+
+router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
+  res.json({msg: 'Success'});
+})
 
 router.post("/login", (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);

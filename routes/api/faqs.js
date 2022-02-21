@@ -1,56 +1,30 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
-const Booking = require('../../models/Booking');
-const validateBookingInput = require('../../validation/bookings');
+const FAQ = require('../../models/FAQ');
 
 router.get('/', (req, res) => {
-    Booking.find()
+    FAQ.find()
         .sort({ date_created: -1 })
-        .then(bookings => res.json(bookings))
-        .catch(err => res.status(404).json({ nobookingsfound: 'No bookings found' }));
-});
-
-router.get('/bookings/:email', (req, res) => {
-    Booking.find({user: req.params.email})
-        .then(bookings => res.json(bookings))
-        .catch(err =>
-            res.status(404).json({ nobookingsfound: 'No bookings found from that user' }
-        )
-    );
+        .then(faqs => res.json(faqs))
+        .catch(err => res.status(404).json({ nofaqsfound: 'No faqs found' }));
 });
 
 router.get('/:id', (req, res) => {
-    Booking.findById(req.params.id)
-        .then(booking => res.json(booking))
+    FAQ.findById(req.params.id)
+        .then(faq => res.json(faq))
         .catch(err =>
-            res.status(404).json({ nobookingfound: 'No booking found with that ID' })
+            res.status(404).json({ nofaqfound: 'No faq found with that ID' })
         );
 });
 
-router.post('/', (req, res) => {
-      const { errors, isValid } = validateBookingInput(req.body);
+router.post('/', passport.authenticate('jwt', { session: false }), (req, res) => {
+    const newFAQ = new FAQ({
+      question: req.body.question,
+      answer: req.body.answer,
+    });
   
-      if (!isValid) {
-        return res.status(400).json(errors);
-      }
-  
-      const newBooking = new Booking({
-        client_name: req.body.client_name,
-        client_email: req.body.client_email,
-        date: req.body.date,
-        booking_duration: req.body.booking_duration,
-        event_type: req.body.occasion,
-        num_guests: req.body.guests,
-        venue_city: req.body.venue_city,
-        venue_name: req.body.venue_name,
-        bar_budget: req.body.bar_budget,
-        referral_source: req.body.referral_source,
-        package: req.body.package,
-        comments: req.body.comments,
-      });
-  
-      newBooking.save().then(booking => res.json(booking));
+    newFAQ.save().then(faq => res.json(faq));
     }
   );
 

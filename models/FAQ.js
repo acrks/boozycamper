@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const BookingSchema = new Schema({
+const FAQSchema = new Schema({
     question: {
         type: String,
         required: true,
@@ -12,5 +12,5 @@ const BookingSchema = new Schema({
     }
 });
 
-module.exports = Booking = mongoose.model('booking', BookingSchema);
+module.exports = FAQ = mongoose.model('faq', FAQSchema);
 
