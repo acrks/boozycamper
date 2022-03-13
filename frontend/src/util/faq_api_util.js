@@ -12,6 +12,6 @@ export const updateFAQ = (faq) => {
   return axios.patch(`/api/faqs/${faq.id}`, faq)
 }
 
-export const deleteAppointment = (faqId) => {
+export const deleteFAQ = (faqId) => {
   return axios.delete(`/api/faqs/${faqId}`)
 }
