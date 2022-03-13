@@ -28,7 +28,7 @@ class FAQs extends React.Component
             <div className = "faqs">
                 <h2>Frequently Asked Questions</h2>
                 {this.state.faqs.map(faq => (
-                    <div className = "faq">
+                    <div className = "faq" key = {faq._id}>
                         <h4>{faq.question}</h4>
                         <p>{faq.answer}</p>
                     </div>

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchFAQs } from '../../actions/faq_actions';
+import { fetchFAQs, composeFAQ, removeFAQ } from '../../actions/faq_actions';
 import FAQs from './faqs';
 
 const mapStateToProps = (state) => {
@@ -11,6 +11,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchFAQs: () => dispatch(fetchFAQs()),
+    composeFAQ: (faq) => dispatch(composeFAQ(faq)),
+    removeFAQ: (faqId) => dispatch(removeFAQ(faqId)),
   };
 };
 

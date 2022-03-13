@@ -10,6 +10,9 @@ import { RECEIVE_FAQS, RECEIVE_NEW_FAQ } from '../actions/faq_actions';
       case RECEIVE_NEW_FAQ:
         newState.new = action.faq.data;
         return newState;
+      case REMOVE_FAQ:
+          delete newState[action.faqId]
+          return newState
       default:
         return state;
     }
