@@ -1,4 +1,4 @@
-import { RECEIVE_FAQS, RECEIVE_NEW_FAQ } from '../actions/faq_actions';
+import { RECEIVE_FAQS, RECEIVE_NEW_FAQ, REMOVE_FAQ } from '../actions/faq_actions';
   
   const FAQsReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
     Object.freeze(state);
