@@ -28,4 +28,30 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
     }
   );
 
+router.patch(
+    "/:faqId",
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+  
+      // const { errors, isValid } = validateAppointment(req.body)
+      // if (!isValid) {
+      //   return res.status(400).json(errors)
+      // }
+  
+      FAQ.findByIdAndUpdate(req.params.faqId, req.body, { new: true })
+        .then(faq => res.json(faq))
+        .catch(err => res.status(404).json({ nofaqfound: "No faq found by that id" }))
+    }
+)
+
+router.delete(
+  "/:faqId",
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    FAQ.deleteOne({_id: req.params.faqId})
+      .then(() => res.status(200).json({ msg: "delete successful" }))
+      .catch(err => res.status(404).json({ nofaqfound: "No faq found by that Id" }))
+    }
+)
+
 module.exports = router;
