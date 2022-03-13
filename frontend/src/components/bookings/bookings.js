@@ -11,7 +11,7 @@ class Booking extends React.Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchBookings();
   }
 

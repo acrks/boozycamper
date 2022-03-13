@@ -7,13 +7,6 @@ const keys = require('../../config/keys');
 const User = require('../../models/User');
 const validateLoginInput = require('../../validation/login');
 
-// router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
-//   res.json({
-//     id: req.user.id,
-//     email: req.user.email
-//   });
-// })
-
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
   res.json({msg: 'Success'});
 })
