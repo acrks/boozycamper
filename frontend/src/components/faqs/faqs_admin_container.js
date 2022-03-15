@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchFAQs, composeFAQ, updateFAQ, deleteFAQ } from '../../actions/faq_actions';
-import FAQs from './faqs';
+import FAQs from './faqs_admin';
 
 const mapStateToProps = (state) => {
   return {

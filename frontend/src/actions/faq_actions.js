@@ -27,7 +27,7 @@ export const composeFAQ = data => dispatch => (
 );
 
 export const updateFAQ = faq => dispatch => (
-  FAQAPIUtil.writeFAQ(faq)
+  FAQAPIUtil.updateFAQ(faq)
     .then(
       faq => dispatch(updateFAQ(faq)),
       err => console.log(err)

@@ -43,7 +43,7 @@ class NavBar extends React.Component {
         return (
             <div className='tabs'>
                 <Link to={'/bookings'}>All Bookings</Link>
-                <Link to={'/faqs'}>FAQs</Link>
+                <Link to={'/faqs_admin'}>FAQs</Link>
                 <button onClick={this.logoutUser}>Logout</button>
             </div>
         );
