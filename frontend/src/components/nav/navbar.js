@@ -44,6 +44,8 @@ class NavBar extends React.Component {
             <div className='tabs'>
                 <Link to={'/bookings'}>All Bookings</Link>
                 <Link to={'/faqs_admin'}>FAQs</Link>
+                <Link to={'/drinks_admin'}>Drinks</Link>
+                <Link to={'/aboutus_admin'}>About Us</Link>
                 <button onClick={this.logoutUser}>Logout</button>
             </div>
         );
