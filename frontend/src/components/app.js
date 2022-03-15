@@ -9,6 +9,7 @@ import LoginFormContainer from './session/login_form_container';
 import ProfileContainer from './profile/profile_container';
 import BookingsContainer from './bookings/bookings_container';
 import FAQsContainer from './faqs/faqs_container';
+import FAQsAdminContainer from './faqs/faqs_admin_container';
 
 const App = () => (
   <div>
@@ -16,9 +17,10 @@ const App = () => (
     <Switch>
         <Route exact path="/" component={MainPage} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <AuthRoute exact path="/faqs" component={FAQsContainer} />
         <AuthRoute exact path="/aboutus" component={AboutUs} />
         <Route exact path = "/reserve" component={BookingForm} />
-        <ProtectedRoute exact path="/faqs" component={FAQsContainer} />
+        <ProtectedRoute exact path="/faqs_admin" component={FAQsAdminContainer} />
         <ProtectedRoute exact path="/bookings" component={BookingsContainer} />
         <ProtectedRoute exact path="/profile" component={ProfileContainer} />
     </Switch>
