@@ -11,12 +11,12 @@ router.get('/', (req, res) => {
 });
 
 router.patch(
-    "/aboutus",
+    "/:aboutUsId",
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
       AboutUs.findByIdAndUpdate(req.params.aboutUsId, req.body, { new: true })
-        .then(faq => res.json(faq))
-        .catch(err => res.status(404).json({ nofaqfound: "No about us found" }))
+        .then(aboutus => res.json(aboutus))
+        .catch(err => res.status(404).json({ noaboutusfound: "No about us found" }))
     }
 )
 
