@@ -85,7 +85,8 @@ class FAQs extends React.Component
                     faq = {faq} 
                     edit = {this.props.updateFAQ}
                     delete = {this.props.deleteFAQ}
-                    write = {this.props.composeFAQ} />
+                    write = {this.props.composeFAQ}
+                    fetchFAQs = {this.props.fetchFAQs} />
                 ))}
             </div>
                 <button type = "submit" onClick={() => this.writeNewFAQ()}>

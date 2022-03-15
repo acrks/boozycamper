@@ -32,13 +32,16 @@ class FAQAdminBox extends React.Component
             answer: this.state.newFAQAnswer,
         }
         this.props.edit(editedFAQ)
+        .then(() => this.props.fetchFAQs())
         .then(() => {
             this.setState(
                 {
                     editing: false,
+                    question: this.props.faq.question,
+                    answer: this.props.faq.answer
                 }
             )
-        })
+        })        
     }
 
     editFAQ() {
@@ -48,9 +51,8 @@ class FAQAdminBox extends React.Component
     }
 
     deleteFAQ() {
-        this.setState({
-            editing: true
-        })
+        this.props.delete(this.state.faq._id)
+        .then(() => this.props.fetchFAQs());
     }
 
     render() {

@@ -37,7 +37,6 @@ router.patch(
       // if (!isValid) {
       //   return res.status(400).json(errors)
       // }
-  
       FAQ.findByIdAndUpdate(req.params.faqId, req.body, { new: true })
         .then(faq => res.json(faq))
         .catch(err => res.status(404).json({ nofaqfound: "No faq found by that id" }))
