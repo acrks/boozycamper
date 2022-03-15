@@ -8,6 +8,8 @@ const users = require("./routes/api/users");
 const products = require("./routes/api/products");
 const bookings = require("./routes/api/bookings");
 const faqs = require("./routes/api/faqs");
+const drinks = require("./routes/api/drinks");
+const aboutus = require("./routes/api/aboutus");
 require('./config/passport')(passport);
 
 app.use(passport.initialize());
@@ -17,6 +19,8 @@ app.use("/api/users", users);
 app.use("/api/products", products);
 app.use("/api/bookings", bookings);
 app.use("/api/faqs", faqs);
+app.use("/api/drinks", drinks);
+app.use("/api/aboutus", aboutus);
 
 mongoose
   .connect(db, { useNewUrlParser: true })
