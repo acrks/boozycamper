@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     Drink.find()
         .sort({ date_created: -1 })
         .then(drinks => res.json(drinks))
-        .catch(err => res.status(404).json({ nodrinksfound: 'No faqs found' }));
+        .catch(err => res.status(404).json({ nodrinksfound: 'No drinks found' }));
 });
 
 router.get('/:id', (req, res) => {
@@ -26,7 +26,7 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
       favorite: req.body.favorite,
     });
   
-    newDrink.save().then(faq => res.json(faq));
+    newDrink.save().then(drink => res.json(drink));
     }
   );
 

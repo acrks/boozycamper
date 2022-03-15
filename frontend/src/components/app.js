@@ -10,6 +10,7 @@ import ProfileContainer from './profile/profile_container';
 import BookingsContainer from './bookings/bookings_container';
 import FAQsContainer from './faqs/faqs_container';
 import FAQsAdminContainer from './faqs/faqs_admin_container';
+import DrinksContainer from './drinks/drinks';
 import DrinksAdminContainer from './drinks/drinks_admin';
 import AboutUsAdminContainer from './aboutus/aboutus_admin';
 
@@ -20,6 +21,7 @@ const App = () => (
         <Route exact path="/" component={MainPage} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/faqs" component={FAQsContainer} />
+        <AuthRoute exact path="/drinks" component={DrinksContainer} />
         <AuthRoute exact path="/aboutus" component={AboutUs} />
         <Route exact path = "/reserve" component={BookingForm} />
         <ProtectedRoute exact path="/bookings" component={BookingsContainer} />
