@@ -94,7 +94,6 @@ class DrinkAdminBox extends React.Component
             )
         }
         else {
-            console.log(this.state)
             return(
                 <div className = "drink">
                     <h4>{this.state.name}</h4>

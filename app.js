@@ -11,6 +11,8 @@ const faqs = require("./routes/api/faqs");
 const drinks = require("./routes/api/drinks");
 const aboutus = require("./routes/api/aboutus");
 require('./config/passport')(passport);
+const multer = require('multer')
+const upload = multer({ dest: 'uploads/' })
 
 app.use(passport.initialize());
 app.use(bodyParser.urlencoded({ extended: false }));
