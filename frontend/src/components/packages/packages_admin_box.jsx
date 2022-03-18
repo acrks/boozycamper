@@ -37,9 +37,9 @@ class PackageAdminBox extends React.Component
             this.setState(
                 {
                 editing: false,
-                name: this.props.drink_package.drink_name,
+                name: this.props.drink_package.name,
                 desc: this.props.drink_package.description,
-                price: this.props.drink_price.price,
+                price: this.props.drink_package.price,
                 }
             )
         })        
@@ -76,6 +76,8 @@ class PackageAdminBox extends React.Component
                 <h3>{this.state.drink_package.name}</h3>
                 <h4>{this.state.drink_package.description}</h4>
                 <h4>${this.state.drink_package.price.toFixed(2)} per guest</h4>
+                <button type = "submit" onClick= {() => this.editPackage()}>Edit</button>
+                <button type = "submit" onClick= {() => this.deletePackage()}>Delete</button>
                 </div>
             )
         }

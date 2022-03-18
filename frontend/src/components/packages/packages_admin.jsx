@@ -7,7 +7,7 @@ class Packages extends React.Component
         super(props);
 
         this.state = {
-            faqs: [],
+            packages: [],
             showNewPackageWindow: false,
             newPackageName: '',
             newPackageDesc: '',
@@ -82,22 +82,22 @@ class Packages extends React.Component
         }
         return(
             <>
-            <div className = "faqs">
+            <div className = "packages">
                 <h2>Packages</h2>
                 {this.state.packages.map(drink_package => (
                     <PackageAdminBox className = "package" 
                     key = {drink_package._id} 
-                    faq = {drink_package} 
+                    drink_package = {drink_package} 
                     edit = {this.props.updatePackage}
                     delete = {this.props.deletePackage}
                     write = {this.props.composePackage}
-                    fetchFAQs = {this.props.fetchPackages} />
+                    fetchPackages = {this.props.fetchPackages} />
                 ))}
             </div>
                 <button type = "submit" onClick={() => this.writeNewPackage()}>
                     Create New Package
                 </button>
-                {this.state.showNewFAQWindow ? this.renderNewPackageWindow() : null}
+                {this.state.showNewPackageWindow ? this.renderNewPackageWindow() : null}
             </>
         )
     }
