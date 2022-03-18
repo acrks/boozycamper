@@ -73,9 +73,9 @@ class PackageAdminBox extends React.Component
         else {
             return(
                 <div className = "package">
-                <h3>{this.state.drink_package.name}</h3>
-                <h4>{this.state.drink_package.description}</h4>
-                <h4>${this.state.drink_package.price.toFixed(2)} per guest</h4>
+                <h3>{this.state.name}</h3>
+                <h4>{this.state.desc}</h4>
+                <h4>${this.state.price.toFixed(2)} per guest</h4>
                 <button type = "submit" onClick= {() => this.editPackage()}>Edit</button>
                 <button type = "submit" onClick= {() => this.deletePackage()}>Delete</button>
                 </div>
