@@ -18,7 +18,6 @@ class AboutUsAdmin extends React.Component {
         if(prevProps.aboutus != this.props.aboutus) {
             this.setState({ aboutusall: this.props.aboutus })
         }
-        console.log(this.state.aboutusall)
     }
     
     render() {

@@ -9,7 +9,7 @@ import { RECEIVE_ABOUT_US_ALL, RECEIVE_ABOUT_US } from '../actions/aboutus_actio
       case RECEIVE_ABOUT_US:
         return action.aboutus.data;
       default:
-        return state;
+        return newState;
     }
   };
   
