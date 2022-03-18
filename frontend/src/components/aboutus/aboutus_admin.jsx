@@ -1,6 +1,20 @@
 import React from "react";
 
-class AboutUs extends React.Component {
+class AboutUsAdmin extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            editing: false,
+            newLongerMessage: '',
+            newShorterMessage: '',
+        }
+    }
+    
+    componentDidMount() {
+        this.fetchAboutUs();
+    }
+    
     render() {
     return( 
     <div className = "aboutus">
@@ -9,4 +23,4 @@ class AboutUs extends React.Component {
     }
 }
 
-export default AboutUs
+export default AboutUsAdmin
