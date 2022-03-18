@@ -22,6 +22,7 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
     const newPackage = new Package({
       name: req.body.name,
       description: req.body.description,
+      price: req.body.price,
     });
   
     newPackage.save().then(faq => res.json(faq));
