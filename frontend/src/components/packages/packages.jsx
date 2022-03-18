@@ -33,7 +33,7 @@ class Packages extends React.Component
                 <div className = "package" key = {drink_package._id}>
                 <h3>{drink_package.name}</h3>
                 <h4>{drink_package.description}</h4>
-                <h4>${(drink_package.price).toFixed(2)} per guest</h4>
+                <h4>${drink_package.price.toFixed(2)} per guest</h4>
                 </div>
             ))}
         </div>
