@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
-import { fetchAboutUs, fetchAboutUsSingle } from '../../actions/aboutus_actions';
-import AboutUs from './aboutus';
+import { fetchAboutUs, updateAboutUs } from '../../actions/aboutus_actions';
+import AboutUs from './aboutus_admin';
 
 const mapStateToProps = (state) => {
   return {
-    aboutus: Object.values(state.aboutus.all)
+    aboutus: state.aboutus
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     fetchAboutUs: () => dispatch(fetchAboutUs()),
-    fetchAboutUsSingle: (id) => dispatch(fetchAboutUsSingle(id)),
+    updateAboutUs: (aboutus) => dispatch(updateAboutUs(aboutus))
   };
 };
 

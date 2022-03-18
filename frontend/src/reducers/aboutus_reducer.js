@@ -5,8 +5,7 @@ import { RECEIVE_ABOUT_US_ALL, RECEIVE_ABOUT_US } from '../actions/aboutus_actio
     let newState = Object.assign({}, state);
     switch(action.type) {
       case RECEIVE_ABOUT_US_ALL:
-        newState.all = action.aboutus.all.data;
-        return newState;
+        return action.aboutus.data;
       case RECEIVE_ABOUT_US:
         return action.aboutus.data;
       default:

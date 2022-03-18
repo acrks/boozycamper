@@ -12,7 +12,7 @@ import FAQsContainer from './faqs/faqs_container';
 import FAQsAdminContainer from './faqs/faqs_admin_container';
 import DrinksContainer from './drinks/drinks';
 import DrinksAdminContainer from './drinks/drinks_admin';
-// import AboutUsAdminContainer from './aboutus/aboutus_admin';
+import AboutUsAdminContainer from './aboutus/aboutus_admin_container';
 
 const App = () => (
   <div>
@@ -27,7 +27,7 @@ const App = () => (
         <ProtectedRoute exact path="/bookings" component={BookingsContainer} />
         <ProtectedRoute exact path="/faqs_admin" component={FAQsAdminContainer} />
         <ProtectedRoute exact path="/drinks_admin" component={DrinksAdminContainer} />
-        {/* <ProtectedRoute exact path="/aboutus_admin" component={AboutUsAdminContainer} /> */}
+        <ProtectedRoute exact path="/aboutus_admin" component={AboutUsAdminContainer} />
         <ProtectedRoute exact path="/profile" component={ProfileContainer} />
     </Switch>
   </div>

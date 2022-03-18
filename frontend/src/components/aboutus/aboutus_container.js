@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchAboutUs, fetchAboutUsSingle } from '../../actions/aboutus_actions';
+import { fetchAboutUsSingle } from '../../actions/aboutus_actions';
 import AboutUs from './aboutus';
 
 const mapStateToProps = (state) => {
@@ -10,7 +10,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchAboutUs: () => dispatch(fetchAboutUs()),
     fetchAboutUsSingle: (id) => dispatch(fetchAboutUsSingle(id)),
   };
 };
