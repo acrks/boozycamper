@@ -42,24 +42,24 @@ class Drinks extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let newDrink = {
-            newDrinkName: this.state.newDrinkName,
-            newDrinkIngredients: this.state.newDrinkIngredients,
-            newDrinkFav: this.state.newDrinkFav,
-            newDrinkType: this.state.newDrinkType,
-            newDrinkImageUrl: this.state.newDrinkImageUrl,
-            newDrinkDesc: this.state.newDrinkDesc,
+            drink_name: this.state.newDrinkName,
+            ingredients: this.state.newDrinkIngredients,
+            favorite: this.state.newDrinkFav,
+            beverage_type: this.state.newDrinkType,
+            image_url: this.state.newDrinkImageUrl,
+            description: this.state.newDrinkDesc,
         }
         this.props.composeDrink(newDrink)
         .then(() => {
             this.setState(
                 {
-                    showNewDrinkWindow: false,
-                    newDrinkName: '',
-                    newDrinkIngredients: '',
-                    newDrinkFav: false,
-                    newDrinkType: '',
-                    newDrinkImageUrl: '',
-                    newDrinkDesc: '',
+                showNewDrinkWindow: false,
+                newDrinkName: '',
+                newDrinkIngredients: '',
+                newDrinkFav: false,
+                newDrinkType: '',
+                newDrinkImageUrl: '',
+                newDrinkDesc: '',
                 }
             )
         })

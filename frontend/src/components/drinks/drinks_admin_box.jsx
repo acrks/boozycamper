@@ -100,7 +100,7 @@ class DrinkAdminBox extends React.Component
                     <h4>{this.state.name}</h4>
                     <p>{this.state.ingredients}</p>
                     <p>{this.state.desc}</p>
-                    <p>{this.state.fav}</p>
+                    <p>{this.state.fav ? `Favorite` : null}</p>
                     <p>{this.state.type}</p>
                     <button type = "submit" onClick= {() => this.editDrink()}>Edit</button>
                     <button type = "submit" onClick= {() => this.deleteDrink()}>Delete</button>
