@@ -28,7 +28,7 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
   
     newDrink.save().then(drink => res.json(drink));
     }
-  );
+);
 
 router.patch(
     "/:drinkId",

@@ -3,6 +3,8 @@ import BookingForm from '../bookings/booking_compose'
 import Packages from '../packages/packages'
 import FAQs from '../faqs/faqs_container'
 import HeroElement from '../hero/hero_element'
+import AboutUs from '../aboutus/aboutus_container'
+
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -14,6 +16,8 @@ class MainPage extends React.Component {
     return (
       <div>
         <HeroElement />
+        <AboutUs 
+        mainPage = {true}/>
         <FAQs />
         <Packages />
         <BookingForm />

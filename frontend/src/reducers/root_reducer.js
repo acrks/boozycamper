@@ -4,6 +4,7 @@ import session from './session_api_reducer';
 import bookings from './bookings_reducer';
 import faqs from './faqs_reducer';
 import drinks from './drinks_reducer';
+import aboutus from './aboutus_reducer'
 
 const RootReducer = combineReducers({
   session,
@@ -11,6 +12,7 @@ const RootReducer = combineReducers({
   bookings,
   faqs,
   drinks,
+  aboutus,
 });
 
 export default RootReducer;

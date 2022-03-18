@@ -18,6 +18,17 @@ router.get('/:id', (req, res) => {
         );
 });
 
+router.post('/', 
+// passport.authenticate('jwt', { session: false }), 
+(req, res) => {
+    const newAboutUs = new AboutUs({
+      text: req.body.text,
+    });
+  
+    newAboutUs.save().then(aboutus => res.json(aboutus));
+    }
+);
+
 router.patch(
     "/:aboutUsId",
     passport.authenticate('jwt', { session: false }),

@@ -4,14 +4,14 @@ export const RECEIVE_DRINKS = "RECEIVE_DRINKS";
 export const RECEIVE_NEW_DRINK = "RECEIVE_NEW_DRINK";
 export const REMOVE_DRINK = "REMOVE_DRINK";
 
-export const receiveDrinks = faqs => ({
+export const receiveDrinks = drinks => ({
   type: RECEIVE_DRINKS,
-  faqs
+  drinks
 });
 
-export const receiveNewDrink = faq => ({
+export const receiveNewDrink = drink => ({
   type: RECEIVE_NEW_DRINK,
-  faq
+  drink
 })
 
 export const fetchDrinks = () => dispatch => (
