@@ -23,6 +23,9 @@ class DrinkAdminBox extends React.Component
     }
 
     updateField(field){
+        if(field === 'fav') {
+            return e => this.setState({[field]: !this.state.fav })
+        }
         return e => this.setState({[field]: e.currentTarget.value})
     }
 
@@ -75,8 +78,9 @@ class DrinkAdminBox extends React.Component
                 Ingredients
                 <textarea value = {this.state.ingredients} onChange = {this.updateField('ingredients')}/>
                 Favorite
-                <input type = "radio" 
-                value = {this.state.fav} 
+                <input type = "checkbox" 
+                name = {'favorite'}
+                value = {true} 
                 checked = {this.state.fav}
                 onChange = {this.updateField('fav')}
                 />
