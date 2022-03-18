@@ -18,6 +18,16 @@ const DrinkSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  imageUrl: {
+    type: String,
+    require: false,
+    default: ''
+  },
+  description: {
+    type: String,
+    require: false,
+    default: '',
+  }
 });
 
 module.exports = Drink = mongoose.model('drink', DrinkSchema);

@@ -24,6 +24,7 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
       ingredients: req.body.ingredients,
       beverage_type: req.body.beverage_type,
       favorite: req.body.favorite,
+      image_url: req.body.image_url
     });
   
     newDrink.save().then(drink => res.json(drink));
