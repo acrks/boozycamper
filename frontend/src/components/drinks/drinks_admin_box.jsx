@@ -79,8 +79,6 @@ class DrinkAdminBox extends React.Component
                 <textarea value = {this.state.ingredients} onChange = {this.updateField('ingredients')}/>
                 Favorite
                 <input type = "checkbox" 
-                name = {'favorite'}
-                value = {true} 
                 checked = {this.state.fav}
                 onChange = {this.updateField('fav')}
                 />
