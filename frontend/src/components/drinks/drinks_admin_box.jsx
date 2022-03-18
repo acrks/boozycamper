@@ -30,7 +30,7 @@ class DrinkAdminBox extends React.Component
     e.preventDefault();
         let editedDrink = {
             id: this.state.drink._id,
-            beverage_name: this.state.name,
+            drink_name: this.state.name,
             ingredients: this.state.ingredients,
             favorite: this.state.fav,
             beverage_type: this.state.type,

@@ -31,6 +31,7 @@ class Drinks extends React.Component {
                     <div className = "drink" key = {drink._id}>
                         <h5>{drink.drink_name}</h5>
                         <p>{drink.ingredients}</p>
+                        <p>{drink.favorite ? "Favorite!" : null}</p>
                     </div>
                 ))}
             </div>
