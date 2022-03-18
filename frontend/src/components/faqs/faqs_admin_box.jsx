@@ -10,8 +10,6 @@ class FAQAdminBox extends React.Component
             question: props.faq.question,
             answer: props.faq.answer,
             editing: false,
-            newFAQQuestion: props.faq.question,
-            newFAQAnswer: props.faq.answer,
         }
 
         this.editFAQ = this.editFAQ.bind(this);
@@ -28,8 +26,8 @@ class FAQAdminBox extends React.Component
     e.preventDefault();
         let editedFAQ = {
             id: this.props.faq._id,
-            question: this.state.newFAQQuestion,
-            answer: this.state.newFAQAnswer,
+            question: this.state.question,
+            answer: this.state.answer,
         }
         this.props.edit(editedFAQ)
         .then(() => this.props.fetchFAQs())
@@ -60,9 +58,9 @@ class FAQAdminBox extends React.Component
             return(
                 <form>
                 Question
-                <textarea value = {this.state.newFAQQuestion} onChange = {this.updateField('newFAQQuestion')} />
+                <textarea value = {this.state.question} onChange = {this.updateField('question')} />
                 Answer
-                <textarea value = {this.state.newFAQAnswer} onChange = {this.updateField('newFAQAnswer')}/>
+                <textarea value = {this.state.answer} onChange = {this.updateField('answer')}/>
                 <button onClick = {this.handleSubmit}>Save updated FAQ</button>
                 </form>
             )
@@ -72,8 +70,8 @@ class FAQAdminBox extends React.Component
                 <div className = "faq">
                     <h4>{this.state.question}</h4>
                     <p>{this.state.answer}</p>
-                    <button type = "submit" onClick= {() => this.editFAQ()}>Edit FAQ</button>
-                    <button type = "submit" onClick= {() => this.deleteFAQ()}>Delete FAQ</button>
+                    <button type = "submit" onClick= {() => this.editFAQ()}>Edit</button>
+                    <button type = "submit" onClick= {() => this.deleteFAQ()}>Delete</button>
                 </div>
             )
         }

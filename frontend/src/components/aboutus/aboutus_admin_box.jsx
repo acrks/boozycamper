@@ -9,7 +9,6 @@ class AboutUsAdminBox extends React.Component
             aboutus: props.aboutus,
             text: props.aboutus.text,
             editing: false,
-            newText: props.aboutus.text,
         }
 
         this.editAboutUs = this.editAboutUs.bind(this);
@@ -25,7 +24,7 @@ class AboutUsAdminBox extends React.Component
     e.preventDefault();
         let editedAboutUs = {
             id: this.props.aboutus._id,
-            text: this.state.newText,
+            text: this.state.text,
         }
         this.props.edit(editedAboutUs)
         .then(() => this.props.fetchAboutUs())
@@ -50,7 +49,7 @@ class AboutUsAdminBox extends React.Component
             return(
                 <form>
                 Question
-                <textarea value = {this.state.newText} onChange = {this.updateField('newText')} />
+                <textarea value = {this.state.text} onChange = {this.updateField('text')} />
                 <button onClick = {this.handleSubmit}>Save</button>
                 </form>
             )

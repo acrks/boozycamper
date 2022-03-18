@@ -11,7 +11,7 @@ import BookingsContainer from './bookings/bookings_container';
 import FAQsContainer from './faqs/faqs_container';
 import FAQsAdminContainer from './faqs/faqs_admin_container';
 import DrinksContainer from './drinks/drinks_container';
-import DrinksAdminContainer from './drinks/drinks_admin';
+import DrinksAdminContainer from './drinks/drinks_admin_container';
 import AboutUsAdminContainer from './aboutus/aboutus_admin_container';
 
 const App = () => (

@@ -18,7 +18,7 @@ const DrinkSchema = new Schema({
     type: Boolean,
     default: false,
   },
-  imageUrl: {
+  image_url: {
     type: String,
     require: false,
     default: ''
