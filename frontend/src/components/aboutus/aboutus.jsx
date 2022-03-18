@@ -21,7 +21,7 @@ class AboutUs extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if(this.props.aboutus != prevProps.aboutus) {
+        if(this.props.aboutus['text'] != prevProps.aboutus['text']) {
             this.setState({
                 message: this.props.aboutus['text']
             })
