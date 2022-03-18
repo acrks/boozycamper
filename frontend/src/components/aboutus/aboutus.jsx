@@ -25,7 +25,6 @@ class AboutUs extends React.Component {
             this.setState({
                 message: this.props.aboutus['text']
             })
-            console.log(this.props)
         }
     }
 
