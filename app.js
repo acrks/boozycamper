@@ -10,6 +10,7 @@ const bookings = require("./routes/api/bookings");
 const faqs = require("./routes/api/faqs");
 const drinks = require("./routes/api/drinks");
 const aboutus = require("./routes/api/aboutus");
+const packages = require("./routes/api/packages")
 require('./config/passport')(passport);
 const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
@@ -23,6 +24,7 @@ app.use("/api/bookings", bookings);
 app.use("/api/faqs", faqs);
 app.use("/api/drinks", drinks);
 app.use("/api/aboutus", aboutus);
+app.use("/api/packages", packages);
 
 mongoose
   .connect(db, { useNewUrlParser: true })
