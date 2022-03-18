@@ -4,14 +4,14 @@ export const RECEIVE_PACKAGES = "RECEIVE_PACKAGES";
 export const RECEIVE_NEW_PACKAGE = "RECEIVE_NEW_PACKAGE";
 export const REMOVE_PACKAGE = "REMOVE_PACKAGE";
 
-export const receivePackages = faqs => ({
+export const receivePackages = packages => ({
   type: RECEIVE_PACKAGES,
-  faqs
+  packages
 });
 
-export const receiveNewPackage = faq => ({
+export const receiveNewPackage = drinks_package => ({
   type: RECEIVE_NEW_PACKAGE,
-  faq
+  drinks_package
 })
 
 export const fetchPackages = () => dispatch => (

@@ -5,10 +5,10 @@ import { RECEIVE_PACKAGES, RECEIVE_NEW_PACKAGE, REMOVE_PACKAGE } from '../action
     let newState = Object.assign({}, state);
     switch(action.type) {
       case RECEIVE_PACKAGES:
-        newState.all = action.drinks.data;
+        newState.all = action.packages.data;
         return newState;
       case RECEIVE_NEW_PACKAGE:
-        newState.new = action.drink.data;
+        newState.new = action.drinks_package.data;
         return newState;
       case REMOVE_PACKAGE:
           delete newState[action.drinkId]

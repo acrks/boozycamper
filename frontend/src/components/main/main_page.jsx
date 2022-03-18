@@ -1,6 +1,6 @@
 import React from 'react';
 import BookingForm from '../bookings/booking_compose'
-import Packages from '../packages/packages'
+import Packages from '../packages/packages_container'
 import FAQs from '../faqs/faqs_container'
 import HeroElement from '../hero/hero_element'
 import AboutUs from '../aboutus/aboutus_container'

@@ -2,17 +2,40 @@ import React from 'react';
 
 class Packages extends React.Component 
 {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            packages: []
+        }
+    }
+
+    componentDidMount() {
+        this.props.fetchPackages();
+    }
+
+    componentDidUpdate(prevState) {
+        if(prevState.packages != this.state.packages) {
+            this.setState({
+                packages: this.props.packages
+            })
+        }
+    }
  render() {
+     if(!this.state.packages) {
+         return(null)
+     }
      return(
         <div className = "Packages">
             <h2>Packages</h2>
             <h4>Camper Rental Starting at $425.00 per hour</h4>
-            <h3>The Standard</h3>
-            <h4>All standard decorations and service, only alcohol served is champagne.<br/>$3.00 per guest</h4>
-            <h3>The Mixer</h3>
-            <h4>Need more than just champagne? The Mixer Package has you covered!<br/>We pour Prosecco + Sangria + Beer (or any type type of wine)<br/>Choose up to 4 drinks from our menu<br/>$5.50 per guest</h4>
-            <h3>The Boozy Bundle</h3>
-            <h4>Our signature package! Choose two signature cocktails, two types of wine, and two types of beer from our incredible selection<br/>$7.50 per guest</h4>
+            {this.state.packages.map(drink_package => (
+                <div className = "package" key = {drink_package._id}>
+                <h3>{drink_package.name}</h3>
+                <h4>{drink_package.description}</h4>
+                <h4>${(drink_package.price).toFixed(2)} per guest</h4>
+                </div>
+            ))}
         </div>
      )
  }

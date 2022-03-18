@@ -16,7 +16,7 @@ export const receiveNewDrink = drink => ({
 
 export const fetchDrinks = () => dispatch => (
   DrinkAPIUtil.getDrinks()
-    .then(faqs => dispatch(receiveDrinks(faqs)))
+    .then(drinks => dispatch(receiveDrinks(drinks)))
     .catch(err => console.log(err))
 );
 
