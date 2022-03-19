@@ -18,8 +18,9 @@ class Drinks extends React.Component {
 
         this.mixNewDrink = this.mixNewDrink.bind(this);
         this.renderNewDrinkWindow = this.renderNewDrinkWindow.bind(this);
-        this.updateField = this.updateField.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.postImage = this.postImage.bind(this);
+        this.updateField = this.updateField.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
 
     }
 
@@ -35,13 +36,22 @@ class Drinks extends React.Component {
         }
     }
 
+    async postImage({image}) {
+        const formData = new FormData();
+        formData.append("image", image)
+        formData.append("description", this.state.newDrinkName)
+      
+        const result = await axios.post('/images', formData, { headers: {'Content-Type': 'multipart/form-data'}})
+        return result.data
+      }
+
     updateField(field){
         return e => this.setState({[field]: e.currentTarget.value})
     }
 
     handleSubmit = async e => {
         e.preventDefault();
-        const result = await postImage({image: file, description})
+        const result = await postImage({image: file})
         this.setState({
             imageUrl: result.image
         })
@@ -72,7 +82,7 @@ class Drinks extends React.Component {
 
     mixNewDrink() {
         this.setState({
-            showNewDrinkWindow: true,
+            showNewDrinkWindow: !this.state.showNewDrinkWindow,
         })
     }
 
@@ -85,6 +95,7 @@ class Drinks extends React.Component {
 
     renderNewDrinkWindow() {
         return(
+            <>
             <form>
             Name
             <textarea value = {this.state.newDrinkName} onChange = {this.updateField('newDrinkName')} />
@@ -108,6 +119,10 @@ class Drinks extends React.Component {
             <input onChange = {this.fileSelected} type = "file" accept="image/*"/>
             <button onClick = {this.handleSubmit}>Save</button>
             </form>
+            <button type = "submit" onClick={() => this.mixNewDrink()}>
+                Exit
+            </button>
+            </>
         )
     }
 
@@ -134,10 +149,13 @@ class Drinks extends React.Component {
                     fetchDrinks = {this.props.fetchDrinks} />
                 ))}
             </div>
+                {this.state.showNewDrinkWindow 
+                ? 
+                this.renderNewDrinkWindow() 
+                :
                 <button type = "submit" onClick={() => this.mixNewDrink()}>
                     Create New Drink
-                </button>
-                {this.state.showNewDrinkWindow ? this.renderNewDrinkWindow() : null}
+                </button>}
             </>
         )
     }
