@@ -48,7 +48,12 @@ class AboutUsAdminBox extends React.Component
         if(this.state.editing) {
             return(
                 <form>
-                Question
+                {this.state.aboutus._id == '623023a8692a4bf6f98b4414'
+                ?
+                'More Detailed About Us Page'
+                :
+                'For Front Page'
+            }
                 <textarea value = {this.state.text} onChange = {this.updateField('text')} />
                 <button onClick = {this.handleSubmit}>Save</button>
                 </form>
