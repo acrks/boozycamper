@@ -15,7 +15,7 @@ require('./config/passport')(passport);
 const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
 
-const uploadFile = require('./s3')
+const { uploadFile } = require('./s3')
 
 app.use(passport.initialize());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -28,11 +28,11 @@ app.use("/api/drinks", drinks);
 app.use("/api/aboutus", aboutus);
 app.use("/api/packages", packages);
 
-app.post('/images', upload.single('image'), (req,res) => {
+app.post('/images', upload.single('image'), async (req,res) => {
   const file = req.file
   console.log(file)
-  // const result = await uploadFile(file)
-  // console.log(result)
+  const result = await uploadFile(file)
+  console.log(result)
   const desc = req.body.description
   console.log(desc)
   res.send('goody goody')
