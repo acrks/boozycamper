@@ -55,12 +55,13 @@ class FAQs extends React.Component
 
     writeNewFAQ() {
         this.setState({
-            showNewFAQWindow: true,
+            showNewFAQWindow: !this.state.showNewFAQWindow,
         })
     }
 
     renderNewFAQWindow() {
         return(
+            <>
             <form>
             Question
             <textarea value = {this.state.newFAQQuestion} onChange = {this.updateField('newFAQQuestion')} />
@@ -68,6 +69,10 @@ class FAQs extends React.Component
             <textarea value = {this.state.newFAQAnswer} onChange = {this.updateField('newFAQAnswer')}/>
             <button onClick = {this.handleSubmit}>Save new FAQ</button>
             </form>
+            <button type = "submit" onClick={() => this.writeNewFAQ()}>
+                Exit
+            </button>
+            </>
         )
     }
 
@@ -89,10 +94,14 @@ class FAQs extends React.Component
                     fetchFAQs = {this.props.fetchFAQs} />
                 ))}
             </div>
+
+                {this.state.showNewFAQWindow 
+                ? 
+                this.renderNewFAQWindow() 
+                :                 
                 <button type = "submit" onClick={() => this.writeNewFAQ()}>
                     Create New FAQ
-                </button>
-                {this.state.showNewFAQWindow ? this.renderNewFAQWindow() : null}
+                </button>}
                 </>
         )
     }
