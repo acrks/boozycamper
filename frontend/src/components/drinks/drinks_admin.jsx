@@ -39,8 +39,12 @@ class Drinks extends React.Component {
         return e => this.setState({[field]: e.currentTarget.value})
     }
 
-    handleSubmit(e) {
+    handleSubmit = async e => {
         e.preventDefault();
+        const result = await postImage({image: file, description})
+        this.setState({
+            imageUrl: result.image
+        })
         let newDrink = {
             drink_name: this.state.newDrinkName,
             ingredients: this.state.newDrinkIngredients,
@@ -72,6 +76,13 @@ class Drinks extends React.Component {
         })
     }
 
+    fileSelected(e) {
+        const file = e.target.files[0]
+        this.setState = ({
+            imageUrl: file
+        })
+    }
+
     renderNewDrinkWindow() {
         return(
             <form>
@@ -94,6 +105,7 @@ class Drinks extends React.Component {
             </select>
             Description
             <textarea value = {this.state.newDrinkDesc} onChange = {this.updateField('newDrinkDesc')} />
+            <input onChange = {this.fileSelected} type = "file" accept="image/*"/>
             <button onClick = {this.handleSubmit}>Save</button>
             </form>
         )

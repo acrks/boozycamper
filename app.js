@@ -15,6 +15,8 @@ require('./config/passport')(passport);
 const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
 
+const uploadFile = require('./s3')
+
 app.use(passport.initialize());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -25,6 +27,16 @@ app.use("/api/faqs", faqs);
 app.use("/api/drinks", drinks);
 app.use("/api/aboutus", aboutus);
 app.use("/api/packages", packages);
+
+app.post('/images', upload.single('image'), (req,res) => {
+  const file = req.file
+  console.log(file)
+  // const result = await uploadFile(file)
+  // console.log(result)
+  const desc = req.body.description
+  console.log(desc)
+  res.send('goody goody')
+})
 
 mongoose
   .connect(db, { useNewUrlParser: true })
