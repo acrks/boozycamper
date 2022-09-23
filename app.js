@@ -10,7 +10,8 @@ const bookings = require("./routes/api/bookings");
 const faqs = require("./routes/api/faqs");
 const drinks = require("./routes/api/drinks");
 const aboutus = require("./routes/api/aboutus");
-const packages = require("./routes/api/packages")
+const packages = require("./routes/api/packages");
+const images = require("./routes/api/images");
 require('./config/passport')(passport);
 const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
@@ -27,16 +28,8 @@ app.use("/api/faqs", faqs);
 app.use("/api/drinks", drinks);
 app.use("/api/aboutus", aboutus);
 app.use("/api/packages", packages);
-
-app.post('/images', upload.single('image'), async (req,res) => {
-  const file = req.file
-  console.log(file)
-  const result = await uploadFile(file)
-  console.log(result)
-  const desc = req.body.description
-  console.log(desc)
-  res.send('goody goody')
-})
+app.use('/uploads', express.static('uploads'));
+app.use("/api/images", images);
 
 mongoose
   .connect(db, { useNewUrlParser: true })
