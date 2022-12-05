@@ -54,7 +54,7 @@ class NavBar extends React.Component {
         return (
               <div className='tabs'>
                 <Link to={'drinks'}>Drinks</Link>
-                <Link to={'pacakges'}>Packages</Link>
+                <Link to={'packages'}>Packages</Link>
                 <Link to={'reserve'}>Reserve The Boozy Camper</Link>
                 <Link to={'vendors'}>Vendors</Link>
                 <Link to={'aboutus'}>Our Story</Link>
